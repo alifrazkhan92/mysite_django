@@ -1,11 +1,9 @@
 from django.urls import path
 from . import views
 
+
+app_name = 'food'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('item', views.item, name='item'),
-    path('bill', views.bill, name='bill'),
-    path('invoice', views.invoice, name='invoice'),
-    path('marks', views.marks, name='marks'),
-    path('duplicate', views.duplicate, name='duplicate'),
+    path('', views.index, name='food'),
+    path('<int:item_id>/', views.detail, name='detail'),
 ]
